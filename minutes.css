@@ -1,0 +1,13 @@
+header{background: #ff838b;}
+.contentA{background: #b3d874;}
+.contentB{background: #6fb5ff;}
+footer{background: #ffce5b;}
+ 
+.contentA,.contentB{
+ width: 50%;
+ height: 100px;
+}
+ 
+.main{
+ display: flex;
+}
