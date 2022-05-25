@@ -7,19 +7,50 @@
     <link rel="stylesheet" href="minutes.css">
     <title>議事録</title>
 </head>
+<script src="minutes.js"></script>
 <body>
 
-    <header>header</header>
-        <div class="container">
+    <div class="container">
+    <header>
+        <label>自社
+        <input onclick="add_participant('our')" placeholder="自社参加者" type="text" id="our_participant_name_input_box"></header></br>
+    </label>
+        <label>先方
+        <input onclick="add_participant('their')" placeholder="先方参加者" type="text" id="their_participant_name_input_box"></header></br>
+    </label>
+    </header></br>
             <div class="main">
-                <main id="output" class="contentA">a</main>
+                <main id="output" class="contentA">
+                    <div id="text_output_field">
+                        <p>a<span>t</span></p>
 
-                <main id="input" class="contentB">b</main>
+                        
+
+                    </div>
+                </main>
+
+                <main id="input" class="contentB">
+                    <div id="text_input_field">
+                        <!-- <input id="text_input_box" type="text"> -->
+                        <textarea id="text_input_box" cols="30" rows="3" ></textarea>
+                        <div id="participant_button">
+                        <div id="our_participant">
+                            <button class="our_participant_button" onclick="add_record()">value="senpo"</button>
+                            <button >value="senpo"</button>
+                            <button >value="senpo"</button>
+                        </div>
+                        <div id="their_participant">
+                            <button >value="jisya"</button>
+                        </div>
+                        </div>
+                    </div>
+                </main>
             </div>
-        </div>
     <footer>
         footer 
     </footer>
+    <button onclick="down('sample.txt', 'abcdefg')">download</button>
+    </div>
 
     
 </body>

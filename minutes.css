@@ -11,3 +11,36 @@ footer{background: #ffce5b;}
 .main{
  display: flex;
 }
+
+#participant_button{
+    display: flex;
+
+}
+
+#text_input_box{
+    box-sizing: border-box;
+}
+
+#our_participant{
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+}
+#their_participant{
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+}
+#participant_button{
+    margin: 1em;
+
+}
+#our_paticipant_button{
+    margin: 1em;
+
+}
+
+#text_output_field{
+    border: black solid;
+    background-color: bisque;
+}
