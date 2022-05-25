@@ -17,6 +17,11 @@ footer{background: #ffce5b;}
 
 }
 
+.name_box{
+    display: flex;
+    flex-direction: row;
+}
+
 #text_input_box{
     box-sizing: border-box;
 }

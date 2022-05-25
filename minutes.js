@@ -8,7 +8,7 @@ let text_output_field = document.getElementById('text_output_field');
     let button_field_id = 'our_participant';
     let participant_tag = document.getElementById(participant_name_input_box_id)
     let button_field_tag = document.getElementById(button_field_id); 
-    button_field_tag.innerHTML += `<button onclick="add_record('text_output_field', '${participant_tag.value}')" class="${button_field_id + '_button'}">${participant_tag.value}</button>`;
+    button_field_tag.innerHTML += `<button onclick="add_record('text_output_field', '弊社: ${participant_tag.value}')" class="${button_field_id + '_button'}">${participant_tag.value}</button>`;
     clear_text_input(participant_tag);
 });
 
@@ -20,7 +20,7 @@ let text_output_field = document.getElementById('text_output_field');
     let button_field_id = 'their_participant';
     let participant_tag = document.getElementById(participant_name_input_box_id)
     let button_field_tag = document.getElementById(button_field_id); 
-    button_field_tag.innerHTML += `<button onclick="add_record('text_output_field', '${participant_tag.value}')" class="${button_field_id + '_button'}">${participant_tag.value}</button>`;
+    button_field_tag.innerHTML += `<button onclick="add_record('text_output_field', '先方: ${participant_tag.value}')" class="${button_field_id + '_button'}">${participant_tag.value}</button>`;
     clear_text_input(participant_tag);
 });
 
@@ -57,12 +57,22 @@ function down(fileName, text) {
 
   function add_record(record_field_id, name) {
     record_count++;
+      const input_box_id = 'text_input_box';
+      let input_box_tag = document.getElementById(input_box_id);
       let record_tag = document.getElementById(record_field_id);
       const current_date = new Date();
     //   record_tag.innerHTML = `<p><span>[09:27:05] </span>conversation daialog<span> name</span></p>` + record_tag.innerHTML;
-      record_tag.innerHTML += `<p id="record_${record_count}"><span class="time" id="record_time_${record_count}">
-      [${current_date.getHours()}:${current_date.getMinutes()}:${current_date.getSeconds()}] 
-      </span>conversation daialog<span class="participant_name ${name}"> ${name}</span></p>`;
+      record_tag.innerHTML += `<p id="record_${record_count}" class="${name}" ><span class="time" id="record_time_${record_count}">
+      [${current_date.getHours()}:${current_date.getMinutes()}:${current_date.getSeconds()}] : 
+      </span><span class="dialog">${input_box_tag.value}</span><span class="participant_name ${name}"></br>${name}</span></p>`;
+
+      let draft_tag = document.getElementById('draft')
+      draft_tag.value += 
+      `[${current_date.getHours()}:${current_date.getMinutes()}:${current_date.getSeconds()}] : ${input_box_tag.value} [${name}]\n`;
+      draft_tag.scrollTo(0, draft_tag.scrollHeight);
+
+      input_box_tag.value = '';
+      
 
       text_output_field.scrollTo(0, text_output_field.scrollHeight);
     

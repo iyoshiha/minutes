@@ -12,40 +12,34 @@
     <div class="container">
     <header>
         <p>参加者の名前を入力したらENTERで追加</p>
-        <label>自社
-        <input placeholder="自社参加者" type="text" id="our_participant_name_input_box"></header></br>
+        <label class="name_box">弊社
+        <input  placeholder="弊社参加者" type="text" id="our_participant_name_input_box"></header></br>
     </label>
-        <label>先方
-        <input placeholder="先方参加者" type="text" id="their_participant_name_input_box"></header></br>
+        <label class="name_box">先方
+        <input  placeholder="先方参加者" type="text" id="their_participant_name_input_box"></header></br>
     </label>
     </header></br>
             <div class="main">
                 <main id="output" class="contentA">
                     <div id="text_output_field">
-
-                        <p><span>[09:27:05] </span>conversation daialog<span> name</span></p>
-
-                        
-
                     </div>
                 </main>
 
                 <main id="input" class="contentB">
                     <div id="text_input_field">
                         <!-- <input id="text_input_box" type="text"> -->
-                        <textarea id="text_input_box" cols="30" rows="3" ></textarea>
-                        <button onclick="change_sub('text_output_field')">change subject</button>
-                        <div id="participant_button">
+                        <textarea id="text_input_box" cols="60" rows="5" ></textarea>
+                        <span id="participant_button">
                         <div id="our_participant">
-                            <button class="our_participant_button" onclick="add_record(this, 'text_output_field')">value="senpo"</button>
-                            <button >value="senpo"</button>
-                            <button >value="senpo"</button>
+                            <h3>弊社</h3>
                         </div>
                         <div id="their_participant">
-                            <button >value="jisya"</button>
+                            <h3>先方</h3>
                         </div>
-                        </div>
+                        </span>
+                        <button onclick="change_sub('text_output_field')">change subject</button>
                     </div>
+                        <textarea id="draft" cols="60" rows="10" ></textarea>
                 </main>
             </div>
     <footer>
