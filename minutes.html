@@ -7,22 +7,23 @@
     <link rel="stylesheet" href="minutes.css">
     <title>議事録</title>
 </head>
-<script src="minutes.js"></script>
 <body>
 
     <div class="container">
     <header>
+        <p>参加者の名前を入力したらENTERで追加</p>
         <label>自社
-        <input onclick="add_participant('our')" placeholder="自社参加者" type="text" id="our_participant_name_input_box"></header></br>
+        <input onclick="add_participant('our_participant_name_input_box', 'our_participant')" placeholder="自社参加者" type="text" id="our_participant_name_input_box"></header></br>
     </label>
         <label>先方
-        <input onclick="add_participant('their')" placeholder="先方参加者" type="text" id="their_participant_name_input_box"></header></br>
+        <input onclick="add_participant('their_participant_name_input_box', 'their_participant')" placeholder="先方参加者" type="text" id="their_participant_name_input_box"></header></br>
     </label>
     </header></br>
             <div class="main">
                 <main id="output" class="contentA">
                     <div id="text_output_field">
-                        <p>a<span>t</span></p>
+
+                        <p><span>[09:27:05] </span>conversation daialog<span> name</span></p>
 
                         
 
@@ -33,9 +34,10 @@
                     <div id="text_input_field">
                         <!-- <input id="text_input_box" type="text"> -->
                         <textarea id="text_input_box" cols="30" rows="3" ></textarea>
+                        <button onclick="change_sub('text_output_field')">change subject</button>
                         <div id="participant_button">
                         <div id="our_participant">
-                            <button class="our_participant_button" onclick="add_record()">value="senpo"</button>
+                            <button class="our_participant_button" onclick="add_record(this, 'text_output_field')">value="senpo"</button>
                             <button >value="senpo"</button>
                             <button >value="senpo"</button>
                         </div>
@@ -47,11 +49,12 @@
                 </main>
             </div>
     <footer>
-        footer 
+        <!-- footer  -->
     </footer>
-    <button onclick="down('sample.txt', 'abcdefg')">download</button>
+    <!-- <button onclick="down('sample.txt', 'abcdefg')">download</button> -->
     </div>
 
     
 </body>
+<script src="minutes.js"></script>
 </html>

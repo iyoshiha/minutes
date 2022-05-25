@@ -43,4 +43,6 @@ footer{background: #ffce5b;}
 #text_output_field{
     border: black solid;
     background-color: bisque;
+    height: 300px;
+    overflow: auto;
 }
