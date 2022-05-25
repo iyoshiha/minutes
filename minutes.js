@@ -1,10 +1,28 @@
 
-      let text_output_field = document.getElementById('text_output_field');
+let text_output_field = document.getElementById('text_output_field');
 
-function add_participant(participant_name_input_box_id, button_field_id){
+    document.getElementById('our_participant_name_input_box').
+    addEventListener('change', function(e)
+    {
+    let participant_name_input_box_id = e.target.id; 
+    let button_field_id = 'our_participant';
     let participant_tag = document.getElementById(participant_name_input_box_id)
     let button_field_tag = document.getElementById(button_field_id); 
-}
+    button_field_tag.innerHTML += `<button onclick="add_record('text_output_field', '${participant_tag.value}')" class="${button_field_id + '_button'}">${participant_tag.value}</button>`;
+    clear_text_input(participant_tag);
+});
+
+    document.getElementById('their_participant_name_input_box').
+    addEventListener('change', function(e)
+    {
+      
+    let participant_name_input_box_id = e.target.id; 
+    let button_field_id = 'their_participant';
+    let participant_tag = document.getElementById(participant_name_input_box_id)
+    let button_field_tag = document.getElementById(button_field_id); 
+    button_field_tag.innerHTML += `<button onclick="add_record('text_output_field', '${participant_tag.value}')" class="${button_field_id + '_button'}">${participant_tag.value}</button>`;
+    clear_text_input(participant_tag);
+});
 
 
 function clear_text_input(input_tag){
@@ -37,14 +55,14 @@ function down(fileName, text) {
 
   let record_count = 0;
 
-  function add_record(obj, record_field_id) {
+  function add_record(record_field_id, name) {
     record_count++;
       let record_tag = document.getElementById(record_field_id);
       const current_date = new Date();
     //   record_tag.innerHTML = `<p><span>[09:27:05] </span>conversation daialog<span> name</span></p>` + record_tag.innerHTML;
       record_tag.innerHTML += `<p id="record_${record_count}"><span class="time" id="record_time_${record_count}">
       [${current_date.getHours()}:${current_date.getMinutes()}:${current_date.getSeconds()}] 
-      </span>conversation daialog<span class="participant_name ${participant_name}"> ${participant_name}</span></p>`;
+      </span>conversation daialog<span class="participant_name ${name}"> ${name}</span></p>`;
 
       text_output_field.scrollTo(0, text_output_field.scrollHeight);
     
