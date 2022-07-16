@@ -68,7 +68,7 @@ function down(fileName, text) {
 
       let draft_tag = document.getElementById('draft')
       draft_tag.value += 
-      `[${current_date.getHours()}:${current_date.getMinutes()}:${current_date.getSeconds()}] : ${input_box_tag.value} [${name}]\n`;
+      `[${current_date.getHours()}:${current_date.getMinutes()}:${current_date.getSeconds()}] : \n${input_box_tag.value}\n\n[${name}]\n\n`;
       draft_tag.scrollTo(0, draft_tag.scrollHeight);
 
       input_box_tag.value = '';
